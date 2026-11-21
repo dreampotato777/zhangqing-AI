@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="账清AI页面与报告模块独立预览，全部使用虚构模拟数据。">
+  <link rel="icon" href="data:,">
+  <title>账清AI · 页面与报告预览</title>
+</head>
+<body>
+  <div id="report-root"></div>
+
+  <script type="module">
+    import { mockResult } from "/src/mock/mockResult.js";
+    import { mountReport } from "/src/ui/mountReport.js";
+
+    mountReport(document.querySelector("#report-root"), {
+      result: mockResult,
+      source: {
+        label: "模拟数据",
+        files: [],
+      },
+    });
+  </script>
+</body>
+</html>
